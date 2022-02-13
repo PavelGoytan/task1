@@ -10,6 +10,7 @@ public class MathCalc {
      * Сумма двух первых цифр заданного четырехзначного числа
      * равна сумме двух его последних цифр.
      */
+
     public boolean sumOfDigits(int number) {
         int[] array = new int[4];
         for (int i = 3; i >= 0; i--) {
@@ -24,6 +25,7 @@ public class MathCalc {
      * Вычислить значение выражения по формуле (все переменные принимают
      * действительные значения):
      */
+
     public double resultOfExpression(double[] arrayDouble) {
         return (arrayDouble[1] + sqrt(pow(arrayDouble[1], 2) +
                 4 * arrayDouble[0] * arrayDouble[2])) /
@@ -35,6 +37,7 @@ public class MathCalc {
      * #6
      * Написать программу нахождения суммы большего и меньшего из трех чисел.
      */
+
     public int sumMinMax(int[] arrayInt) {
         int min = arrayInt[0];
         int max = arrayInt[0];

@@ -1,6 +1,5 @@
 package by.training.jwd.goytan.task;
 
-
 import java.util.Scanner;
 
 public class Controller {
@@ -14,7 +13,6 @@ public class Controller {
         this.scanner = new Scanner(System.in);
         this.view = new Output();
     }
-
 
     /**
      * #1
@@ -47,6 +45,7 @@ public class Controller {
      * Вычислить значение выражения по формуле (все переменные принимают
      * действительные значения):
      */
+
     public void resultOfExpression() {
         view.titleValueOfExpression();
         double result;
@@ -68,6 +67,7 @@ public class Controller {
      * #6
      * Написать программу нахождения суммы большего и меньшего из трех чисел.
      */
+
     public void sumMinMax() {
         view.titleSum();
         String string = "";

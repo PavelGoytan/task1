@@ -23,7 +23,6 @@ public class Output {
                 " введенного четырехзначного числа," +
                 " равна сумме двух его последних цифр.\", является: " + isTrue);
         System.out.println();
-
     }
 
     public void titleValueOfExpression() {
@@ -56,7 +55,6 @@ public class Output {
         System.out.println("Некорректный ввод!");
     }
 
-
     public void enterNumber(String variable) {
         System.out.println("Введите действительно число, переменная " + variable + " : ");
     }
@@ -68,7 +66,5 @@ public class Output {
     public void stopOrContinue() {
         System.out.println("Для продолжения нажмите Enter, для завершения введите \"END\"");
     }
-
-
 }
 
