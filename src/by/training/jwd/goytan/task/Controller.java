@@ -7,11 +7,13 @@ public class Controller {
     private final MathCalc calc;
     private final Scanner scanner;
     private final Output view;
+    private final InputVar input;
 
     public Controller() {
         this.calc = new MathCalc();
         this.scanner = new Scanner(System.in);
         this.view = new Output();
+        this.input = new InputVar();
     }
 
     /**
@@ -26,13 +28,7 @@ public class Controller {
             view.enterNumber();
             String stringInt = scanner.nextLine();
             if (!stringInt.equals(END)) {
-                while (VarValidator.isCorrectInteger(stringInt)
-                        || VarValidator.isFourDigit(stringInt)) {
-                    view.inputError();
-                    view.enterNumber();
-                    stringInt = scanner.nextLine();
-                }
-                int number = Integer.parseInt(stringInt);
+                int number = input.inputFourDigit(view, scanner, stringInt);
                 view.sumOfDigits(calc.sumOfDigits(number));
             } else {
                 break;
@@ -51,7 +47,7 @@ public class Controller {
         double result;
         String string = "";
         while (!string.equals(END)) {
-            double[] arrayDouble = InputVar.getDoubles(view, scanner);
+            double[] arrayDouble = input.inputDoubles(view, scanner);
             if (VarValidator.isCorrectVariable(arrayDouble)) {
                 result = calc.resultOfExpression(arrayDouble);
                 view.resultOfExpression(result);
@@ -72,7 +68,7 @@ public class Controller {
         view.titleSum();
         String string = "";
         while (!string.equals(END)) {
-            int[] integers = InputVar.getIntegers(view, scanner);
+            int[] integers = input.inputIntegers(view, scanner);
             view.sumMinMax(calc.sumMinMax(integers));
             view.stopOrContinue();
             string = scanner.nextLine();

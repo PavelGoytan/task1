@@ -3,7 +3,17 @@ package by.training.jwd.goytan.task;
 import java.util.Scanner;
 
 public class InputVar {
-    public static double[] getDoubles(Output view, Scanner scanner) {
+    public int inputFourDigit(Output view, Scanner scanner, String string) {
+        while (VarValidator.isCorrectInteger(string)
+                || VarValidator.isFourDigit(string)) {
+            view.inputError();
+            view.enterNumber();
+            string = scanner.nextLine();
+        }
+        return Integer.parseInt(string);
+    }
+
+    public double[] inputDoubles(Output view, Scanner scanner) {
         String[] array = {"a", "b", "c"};
         double[] arrayDouble = new double[array.length];
         for (int i = 0; i < array.length; i++) {
@@ -19,7 +29,7 @@ public class InputVar {
         return arrayDouble;
     }
 
-    public static int[] getIntegers(Output view, Scanner scanner) {
+    public int[] inputIntegers(Output view, Scanner scanner) {
         String[] array = {"первое", "второе", "третье"};
         int[] arrayInteger = new int[array.length];
         for (int i = 0; i < array.length; i++) {
@@ -34,6 +44,4 @@ public class InputVar {
         }
         return arrayInteger;
     }
-
-
 }
